@@ -1,0 +1,6 @@
+
+<div class="imgcontainer">
+	<div class="gallery" *ngFor="let image of _albums; let i=index">
+	  <img src="{{image.src}}" (click)="open(i)" />
+	</div>
+</div>

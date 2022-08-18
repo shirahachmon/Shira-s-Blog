@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+.body{
+    margin: 0;
+
+    /* I don`t want that any page will be with scrolling.  */
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
