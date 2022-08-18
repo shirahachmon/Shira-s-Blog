@@ -4,30 +4,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
-import { ShiraTravilngComponent } from './shira-travilng/shira-travilng.component';
-import { SolvingJsProblemsComponent } from './home/solving-js-problems/solving-js-problems.component';
-import { CheetsheetComponent } from './home/cheetsheet/cheetsheet.component';
-import { TricksInJsComponent } from './home/tricks-in-js/tricks-in-js.component';
-import { AppBootstrapModule } from './appBootStrap.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LightboxModule } from 'ngx-lightbox';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PracticeComponent } from './practice/practice.component';
+import { TricksComponent } from './tricks/tricks.component';
+import { SummaryComponent } from './summary/summary.component';
+import { TripComponent } from './trip/trip.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    ShiraTravilngComponent,
-    SolvingJsProblemsComponent,
-    CheetsheetComponent,
-    TricksInJsComponent
+    PracticeComponent,
+    TricksComponent,
+    SummaryComponent,
+    TripComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppBootstrapModule,
     LightboxModule,
     BrowserAnimationsModule,
     FontAwesomeModule,

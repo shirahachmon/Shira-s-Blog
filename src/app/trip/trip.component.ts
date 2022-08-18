@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Lightbox } from 'ngx-lightbox';
 
 @Component({
-  selector: 'app-shira-travilng',
-  templateUrl: './shira-travilng.component.html',
-  styleUrls: ['./shira-travilng.component.css']
+  selector: 'app-trip',
+  templateUrl: './trip.component.html',
+  styleUrls: ['./trip.component.css']
 })
-export class ShiraTravilngComponent implements OnInit {
+export class TripComponent implements OnInit {
+
   photosUrl= [
     "playavenao-fromabove",
     "niwi-boritaca-colombia",
@@ -64,6 +65,5 @@ export class ShiraTravilngComponent implements OnInit {
     this._lightbox.close();
   }
   
-
 
 }

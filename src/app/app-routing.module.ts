@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CheetsheetComponent } from './home/cheetsheet/cheetsheet.component';
-// import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { SolvingJsProblemsComponent } from './home/solving-js-problems/solving-js-problems.component';
-import { TricksInJsComponent } from './home/tricks-in-js/tricks-in-js.component';
-import { ShiraTravilngComponent } from './shira-travilng/shira-travilng.component';
+import { PracticeComponent } from './practice/practice.component';
+import { SummaryComponent } from './summary/summary.component';
+import { TricksComponent } from './tricks/tricks.component';
+import { TripComponent } from './trip/trip.component';
 
 
 const routes: Routes = [
@@ -15,19 +14,19 @@ const routes: Routes = [
 },
 {
     path: 'trip',
-    component: ShiraTravilngComponent
+    component: TripComponent
 },
 {
     path: 'summary',
-    component: CheetsheetComponent
+    component: SummaryComponent
 },
 {
     path: 'practice',
-    component: SolvingJsProblemsComponent
+    component: PracticeComponent
 },
 {
     path: 'tricks',
-    component: TricksInJsComponent
+    component: TricksComponent
 },
 {
     path: '',
