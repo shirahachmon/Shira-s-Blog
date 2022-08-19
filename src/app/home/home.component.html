@@ -1,20 +1,14 @@
-<section aria-label="Blog"(keydown.enter)="next()">
-
-  <button mat-button>Basic</button>
-  <button mat-button color="primary">Primary</button>
-  <button mat-button color="accent">Accent</button>
-  <button mat-button color="warn">Warn</button>
-  <button mat-button disabled>Disabled</button>
-
+<section (keydown.enter)="next()">
   <div class="carousel">
-        <button class=" carousel-button prev" (click)="prev()">&#8656;</button>
+        <button class="carousel-button prev" (click)="prev()">&#8656;</button>
         <button class="carousel-button next" (click)="next()">&#8658;</button>
-    <ul>
-    <li *ngFor="let img of homeImages; let i=index" >
-       <img style="height: 100vh; width: 214vh;" *ngIf="img.active" [@fade] src={{img.src}} alt={{img.alt}}>
-    </li>
-    </ul>
-    </div>
+        <span>Who says you're not star potential</span>
+        <ul>
+          <li *ngFor="let img of homeImages;" >
+            <img *ngIf="img.active" [@fade] src={{img.src}}>
+          </li>
+      </ul>
+  </div>
 </section>
 
 

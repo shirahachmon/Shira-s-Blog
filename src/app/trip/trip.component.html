@@ -1,6 +1,21 @@
 
 <div class="imgcontainer">
-	<div class="gallery" *ngFor="let image of _albums; let i=index">
-	  <img src="{{image.src}}" (click)="open(i)" />
+
+    <button (click)="nextPlace()">Move from {{currentPlace}}<i class="fa fa-arrow-right"></i></button>
+	<div  class="gallery" *ngFor="let image of shownImages">
+	  <img src="{{image.src}}" />
 	</div>
 </div>
+
+
+
+
+    <!-- working icons: -->
+    <!-- <i class="fa fa-sort-down"></i>
+    <i class="fa fa-user"></i>
+    <i class="fa fa-lock"></i>  
+    <i class="fa fa-envelope"></i>  
+    <i class="fa fa-arrow-left"></i> -->
+
+<!-- <img src="{{image}}" (click)="open(i)" /> -->
+<!-- <fa-icon [icon]="faCoffee"></fa-icon> -->

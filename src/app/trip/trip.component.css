@@ -1,22 +1,17 @@
 .imgcontainer {
-    max-width: 1170px;
-    width: 100%;
+    overflow: hidden;
     padding-right: 15px;
     padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 5px;
   }
-  
-  .imgcontainer .gallery img {
+
+ img {
     cursor: pointer;
     float: right;
     width: 20%;
-    height: auto;
-    border: 2px solid #fff;
-    -webkit-transition: -webkit-transform .15s ease;
-    -moz-transition: -moz-transform .15s ease;
-    -o-transition: -o-transform .15s ease;
-    -ms-transition: -ms-transform .15s ease;
-    transition: transform .15s ease;
+    border: 2.5px solid #fff;
     position: relative;
+  }
+
+  .gallery {
   }
