@@ -30,8 +30,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LightboxModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    NgbModule,
-  ],
+    NgbModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
