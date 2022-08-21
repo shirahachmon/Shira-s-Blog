@@ -15,6 +15,7 @@ import { TripComponent } from './trip/trip.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { NotesComponent } from './notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatButtonModule} from '@angular/material/button';
     PracticeComponent,
     TricksComponent,
     SummaryComponent,
-    TripComponent
+    TripComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,

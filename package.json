@@ -30,6 +30,7 @@
     "@popperjs/core": "^2.10.2",
     "@schematics/angular": "^9.1.0",
     "bootstrap": "^5.2.0",
+    "bulma": "^0.9.4",
     "express": "^4.18.1",
     "ngx-bootstrap": "^9.0.0",
     "ngx-lightbox": "^2.6.1",

@@ -1,6 +1,6 @@
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 @import "~bootstrap/dist/css/bootstrap.css";
-
+/* @import "../node_modules/bulma/bulma.sass"; */
 
 .body{
     margin: 0;
