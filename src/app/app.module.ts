@@ -13,6 +13,8 @@ import { TricksComponent } from './tricks/tricks.component';
 import { SummaryComponent } from './summary/summary.component';
 import { TripComponent } from './trip/trip.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LightboxModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    MatCardModule,
+    MatButtonModule
     ],
   providers: [],
   bootstrap: [AppComponent]

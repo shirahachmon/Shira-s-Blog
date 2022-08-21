@@ -1,24 +1,39 @@
+<div class="imgcontainer" (keydown.enter)="nextImageInPlace()">
+  <button (click)="nextPlace()">Move from {{currentPlace}} <i class="fa fa-arrow-right"></i></button>
+  <!-- *ngFor="let image of shownImages" -->
+<mat-card class="example-card">
+  <mat-card-header>
+    
+    <div mat-card-avatar class="example-header-image">
+      <fa-icon [icon]="faInstagram"></fa-icon>
+    </div>
+    <mat-card-title>Title</mat-card-title>
+    <mat-card-subtitle>Subtitle</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{shownImages[currentIndexInPlace].src}}">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+      bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button class="next-image" (click)="nextImageInPlace()">
+      <i class="fa fa-arrow-right"></i>
+    </button>
+    <button mat-button class="previous-image" (click)="prevImageInPlace()">
+      <i class="fa fa-arrow-left"></i>
+    </button>
+  </mat-card-actions>
+</mat-card> 
+</div>
 
+
+<!-- 
 <div class="imgcontainer">
-    <!-- <i class="fa fa-sort-down"></i>
-    <i class="fa fa-user"></i>
-    <i class="fa fa-lock"></i>  
-    <i class="fa fa-envelope"></i>  
-    <i class="fa fa-arrow-left"></i>
-
-    <fa-icon [icon]="faCoffee"></fa-icon>
-    <fa-icon [icon]="faAws"></fa-icon>
-    <fa-icon [icon]="faYoutube"></fa-icon>
-    <fa-icon [icon]="faApplePay"></fa-icon>
-    <fa-icon [icon]="faCcApplePay"></fa-icon>
-    <fa-icon [icon]="faAddressCard"></fa-icon>
-    <fa-icon [icon]="fa9"></fa-icon> -->
-    <!-- <mat-slider min="1" max="100" step="1" value="50"></mat-slider> -->
-
-
     <button (click)="nextPlace()">Move from {{currentPlace}} <i class="fa fa-arrow-right"></i></button>
 	<div  class="gallery" *ngFor="let image of shownImages">
 	  <img src="{{image.src}}" />
 	</div>
-</div>
-
+</div> -->

@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Lightbox } from 'ngx-lightbox';
 import * as exportData from 'src/assets/exportData.json'
-import { faCoffee, faAddressCard, fa9} from '@fortawesome/free-solid-svg-icons';
-import { faAws, faYoutube,faApplePay,faCcApplePay } from '@fortawesome/free-brands-svg-icons';
-
+import {faInstagram} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-trip',
@@ -14,16 +12,13 @@ export class TripComponent implements OnInit {
   constructor(private _lightbox: Lightbox) {
   }
 
-  // Another way to import an icon. 
-  faCoffee = faCoffee;
-  faAws = faAws;
-  faYoutube = faYoutube;
-  faApplePay=faApplePay;
-  faCcApplePay=faCcApplePay;
-  faAddressCard=faAddressCard;
-  fa9=fa9;
-  // fa360Degrees=fa360Degrees;
+    @HostListener('document:keypress', ['$event'])    
+    handleKeyboardEvent(event: KeyboardEvent) {
+      // Gives all except -> and <-. Why? Problem- has to solve this....
+      if(event.key=="Enter") this.nextImageInPlace();
+    }
 
+    faInstagram=faInstagram;
   // Gives all data from the ts file. 
   exportedData:any= exportData; 
 
@@ -31,26 +26,37 @@ export class TripComponent implements OnInit {
   allImages:any;
 
   // Index of all images array. Indicate place. 
-  shownIndexPlace:any;
+  shownIndexPlace:number= 0;
 
   // Array of all  shown images depending on place.
   shownImages: any;
 
   currentPlace: any;
   
+  currentIndexInPlace:number= 0;
+
   ngOnInit(): void {
     this.allImages=this.exportedData.images;
-    this.shownIndexPlace=0;
     this.shownImages = Object.values(this.allImages[this.shownIndexPlace])[0]
     this.currentPlace=Object.keys(this.allImages[this.shownIndexPlace]);
   }
 
+  nextImageInPlace(){
+    if(this.currentIndexInPlace===this.shownImages.length-1) this.currentIndexInPlace=0;
+    else this.currentIndexInPlace++;
+  }
+  
+  prevImageInPlace(){
+    if(this.currentIndexInPlace===0) this.currentIndexInPlace= this.shownImages.length-1;
+    else this.currentIndexInPlace--;
+  }
+
   nextPlace(){
+    this.currentIndexInPlace=0;
     if(this.shownIndexPlace== this.allImages.length-1) this.shownIndexPlace=0;
     else this.shownIndexPlace++;
     this.shownImages = Object.values(this.allImages[this.shownIndexPlace])[0]
     this.currentPlace=Object.keys(this.allImages[this.shownIndexPlace]);
-
   }
 }
 
