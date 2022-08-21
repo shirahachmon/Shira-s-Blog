@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Lightbox } from 'ngx-lightbox';
 import * as exportData from 'src/assets/exportData.json'
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faAddressCard, fa9} from '@fortawesome/free-solid-svg-icons';
+import { faAws, faYoutube,faApplePay,faCcApplePay } from '@fortawesome/free-brands-svg-icons';
 
 
 @Component({
@@ -13,9 +14,15 @@ export class TripComponent implements OnInit {
   constructor(private _lightbox: Lightbox) {
   }
 
-
   // Another way to import an icon. 
-  // faCoffee = faCoffee;
+  faCoffee = faCoffee;
+  faAws = faAws;
+  faYoutube = faYoutube;
+  faApplePay=faApplePay;
+  faCcApplePay=faCcApplePay;
+  faAddressCard=faAddressCard;
+  fa9=fa9;
+  // fa360Degrees=fa360Degrees;
 
   // Gives all data from the ts file. 
   exportedData:any= exportData; 

@@ -12,6 +12,7 @@ import { PracticeComponent } from './practice/practice.component';
 import { TricksComponent } from './tricks/tricks.component';
 import { SummaryComponent } from './summary/summary.component';
 import { TripComponent } from './trip/trip.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TripComponent } from './trip/trip.component';
     LightboxModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
