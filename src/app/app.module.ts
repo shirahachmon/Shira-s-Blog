@@ -20,6 +20,7 @@ import { MainLayoutComponent } from './notes/main-layout/main-layout.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NotesCardComponent } from './notes/notes-card/notes-card.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     TripComponent,
     NotesListComponent,
     MainLayoutComponent,
+    NotesCardComponent,
   ],
   imports: [
     BrowserModule,

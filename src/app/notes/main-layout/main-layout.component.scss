@@ -3,19 +3,39 @@
 .layout-box{
     width: 100vw;
     display: flex;
+    // Goning to flex all items in column. 
     flex-direction: column;
     height: 100%;
     overflow: hidden;
 
+    // Feature that we are able to use only because 
+    // Of the sass/scss.
     .page-content{
+        // Flex grow is the width comparing the amount 
+        // Of text. flex grow 1 will be the nicest almost everytime.
         flex-grow: 1;
         overflow-y: scroll;
-
     }
 }
 
 .top-bar{
     width:100%;
     height:68px;
-    background: linear-gradient(to right, $pink, $blue)
+    // Enable us to do a linear colors text.
+    background: linear-gradient(to right, $pink, $blue);
+    box-shadow: 0px 0px 10px 0px rgba(black, 0.15);
+    display: flex;
+    // To prevent the top bar from shrinking
+    flex-shrink: 0;
+    text-align: center;
+    // Center child element (The heading)
+    justify-content: baseline;
+    align-items: center;
+
+    h1{
+        color: white;
+        font-size: 35px;
+    }
+
+    
 }
