@@ -1,9 +1,15 @@
-<div class="note-card-container" #container>
+<div class="note-card-container" #container style="background-color: white !important ;">
 
     <div class="note-card-content">
-        <h1 class="note-card-title">Lorem ipsum</h1>
-        <div class="note-card-body">
-            Lorem ipsum- This is the body
+        <h1 class="note-card-title">{{title}}</h1>
+        
+        <div #bodyText class="note-card-body">
+            <p>{{body}}</p>
+
+            <div #truncator class="fade-out-truncation"></div>
         </div>
+
     </div>
+
+    <div class="x-button">X</div>
 </div>

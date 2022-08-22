@@ -7,8 +7,13 @@ import {faUserLock, faSearch} from '@fortawesome/free-solid-svg-icons';
 })
 export class NotesListComponent implements OnInit {
 
+  // Importing icons
   faUserLock=faUserLock;
   faSearch=faSearch;
+
+  // Data when calling other component from here
+  cardTitle:string= 'some title....'
+  cardBody: string= 'body some bodybody some bodybody some body....'
 
 
   constructor() { }

@@ -6,6 +6,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictPropertyInitialization": false,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "noImplicitOverride": true,
@@ -29,7 +30,6 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictPropertyInitialization": false,
     "strictTemplates": true
   }
 }
