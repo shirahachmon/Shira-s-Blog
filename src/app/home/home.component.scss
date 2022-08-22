@@ -1,0 +1,48 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img{
+  width: 100vw;
+  height: 90vh;
+}
+
+// Important. When moving to other image the nav bar increased.
+.carousel > ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carousel-button{
+
+  position: absolute;
+   background: none; 
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.carousel-button:hover,
+.carousel-button:focus{
+  color: white;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.carousel-button:focus{
+  outline: 1px solid black;
+}
+
+.carousel-button.prev{
+  left: 1rem;
+  width: 5%;
+}
+
+.carousel-button.next{
+  width: 5%;
+  right:1rem;
+}
+

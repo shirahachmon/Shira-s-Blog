@@ -4,7 +4,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['./home.component.scss'],
   animations: [
    trigger('fade', [
       transition('void => *', [
@@ -27,17 +27,13 @@ export class HomeComponent implements OnInit {
     {src: '/assets/images/homepagepicture.jpg', alt: "Standing In Panama Roads", active: false },
     {src: '/assets/images/playavenao2.jpg', alt: "Walking On The Beach" , active:false},
     {src: '/assets/images/colombia.jpg', alt: "Siera Minca" , active:false}];
- 
-    key:any;
-
 
     // Built host listener for capture all key press on the key board, 
     // So that we can move to other images in component within a key press on the Enter. 
     @HostListener('document:keypress', ['$event'])    
     handleKeyboardEvent(event: KeyboardEvent) {
       // Gives all except -> and <-. Why? Problem- has to solve this....
-      this.key = event.key;
-      if(this.key=="Enter") this.next();
+      if(event.key=="Enter") this.next();
     }
 
 

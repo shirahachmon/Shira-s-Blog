@@ -6,7 +6,7 @@ import {faInstagram} from '@fortawesome/free-brands-svg-icons';
 @Component({
   selector: 'app-trip',
   templateUrl: './trip.component.html',
-  styleUrls: ['./trip.component.css']
+  styleUrls: ['./trip.component.scss']
 })
 export class TripComponent implements OnInit {
   constructor(private _lightbox: Lightbox) {

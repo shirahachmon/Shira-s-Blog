@@ -1,0 +1,13 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "./main-styles.scss";
+@import "../node_modules/bulma/bulma.sass";
+
+html, body {
+    height: 100%;
+    background-color:  #272727 !important;
+    }
+body {
+     margin: 0; 
+     font-family: Roboto, "Helvetica Neue", sans-serif; 
+    }

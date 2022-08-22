@@ -15,7 +15,12 @@ import { TripComponent } from './trip/trip.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import { NotesComponent } from './notes/notes.component';
+import { NotesListComponent } from './notes/notes-list/notes-list.component';
+import { MainLayoutComponent } from './notes/main-layout/main-layout.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +31,8 @@ import { NotesComponent } from './notes/notes.component';
     TricksComponent,
     SummaryComponent,
     TripComponent,
-    NotesComponent
+    NotesListComponent,
+    MainLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,10 @@ import { NotesComponent } from './notes/notes.component';
     FontAwesomeModule,
     NgbModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatInputModule,
+    MatCheckboxModule
     ],
   providers: [],
   bootstrap: [AppComponent]

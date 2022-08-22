@@ -4,7 +4,7 @@ import { Lightbox } from 'ngx-lightbox';
 @Component({
   selector: 'app-tricks',
   templateUrl: './tricks.component.html',
-  styleUrls: ['./tricks.component.css']
+  styleUrls: ['./tricks.component.scss']
 })
 export class TricksComponent implements OnInit {
 

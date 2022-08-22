@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { NotesComponent } from './notes/notes.component';
+import { MainLayoutComponent } from './notes/main-layout/main-layout.component';
+import { NotesListComponent } from './notes/notes-list/notes-list.component';
 import { PracticeComponent } from './practice/practice.component';
 import { SummaryComponent } from './summary/summary.component';
 import { TricksComponent } from './tricks/tricks.component';
@@ -31,7 +32,11 @@ const routes: Routes = [
 },
 {
     path: 'notes',
-    component: NotesComponent
+    component: MainLayoutComponent, 
+    children:[
+        {path: '',
+         component: NotesListComponent}
+    ]
 },
 {
     path: '',

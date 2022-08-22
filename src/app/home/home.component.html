@@ -2,7 +2,6 @@
   <div class="carousel">
         <button class="carousel-button prev" (click)="prev()">&#8656;</button>
         <button class="carousel-button next" (click)="next()">&#8658;</button>
-      <span>Who says you're not star potential</span>
         <ul>
           <li *ngFor="let img of homeImages;" >
             <img *ngIf="img.active" [@fade] src={{img.src}}>
@@ -10,19 +9,3 @@
       </ul>
   </div>
 </section>
-
-
-<!-- <div style="height: 100vh; width: 214vh;" class="bg" >    
-  </div> -->
-
-  <!-- //   <li class="slide">
-    //   <img src="/assets/images/homepagepicture.jpg" alt="Standing in panama roads">
-    //   </li>
-    // <li class="slide" data-active>
-    //   <img src="/assets/images/playavenao2.jpg" alt="Walking on the beach">
-    // </li>
-    // <li class="slide">
-    //   <img src="/assets/images/colombia.jpg" alt="Siera Minca">
-    // </li>
-    // } -->
-    
