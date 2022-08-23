@@ -9,6 +9,7 @@ $pink: #df1788;
 $blue: #37c7f2;
 $light-red: #fff3f3;
 $light: #fafcff;
+$green: #0bf387;
 
 
 // Update Bulma's global variables
@@ -28,5 +29,5 @@ $input-shadow: none;
 html, body{
     height:100%;
     font-size:18px !important;
-    overflow: hidden !important;
+    // overflow: hidden !important;
 } 

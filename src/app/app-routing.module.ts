@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MainLayoutComponent } from './notes/main-layout/main-layout.component';
+import { NoteDetailsComponent } from './notes/note-details/note-details.component';
 import { NotesListComponent } from './notes/notes-list/notes-list.component';
 import { PracticeComponent } from './practice/practice.component';
 import { SummaryComponent } from './summary/summary.component';
@@ -35,7 +36,15 @@ const routes: Routes = [
     component: MainLayoutComponent, 
     children:[
         {path: '',
-         component: NotesListComponent}
+        component: NotesListComponent
+        },
+        //Dynamic root with an id
+        {path: ':id',
+        component: NoteDetailsComponent
+        },
+        {path: 'new',
+        component: NoteDetailsComponent
+        }
     ]
 },
 {

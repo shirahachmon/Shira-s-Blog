@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FormsModule } from '@angular/forms';
 import { LightboxModule } from 'ngx-lightbox';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PracticeComponent } from './practice/practice.component';
@@ -21,6 +22,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NotesCardComponent } from './notes/notes-card/notes-card.component';
+import { NoteDetailsComponent } from './notes/note-details/note-details.component';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { NotesCardComponent } from './notes/notes-card/notes-card.component';
     NotesListComponent,
     MainLayoutComponent,
     NotesCardComponent,
+    NoteDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { NotesCardComponent } from './notes/notes-card/notes-card.component';
     MatButtonModule,
     MatSidenavModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
