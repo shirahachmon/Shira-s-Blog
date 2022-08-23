@@ -1,7 +1,7 @@
   <div class="main-container">
 
     <div class="form__group field">
-        <input type="input" class="form__field" placeholder="Search" name="text" id='text' />
+        <input #filterInput type="input" class="form__field" (keyup)="filter($event.target.value)" placeholder="Search" name="text" id='text' />
         <label for="text" class="form__label">
           <fa-icon [icon]="faSearch"></fa-icon>
         </label>
@@ -11,10 +11,10 @@
     <div class="notes-list" [@listAnim]>
         <!-- <app-notes-card [title]="cardTitle" [body]="cardBody"></app-notes-card> -->
         <app-notes-card
-         *ngFor="let note of notes; index as i"
-          link="{{i}}"
+         *ngFor="let note of filteredNotes; index as i"
+          link="{{generateNoteURL(note)}}"
           [@itemAnim]
-          (delete)="deleteNote(i)"
+          (delete)="deleteNote(note)"
           [title]="note.title"
           [body]="note.body" ></app-notes-card>
     </div>
