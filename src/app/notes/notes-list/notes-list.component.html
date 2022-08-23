@@ -13,6 +13,7 @@
         <app-notes-card
          *ngFor="let note of notes; index as i"
           link="{{i}}"
+          [@itemAnim]
           (delete)="deleteNote(i)"
           [title]="note.title"
           [body]="note.body"
