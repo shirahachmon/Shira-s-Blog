@@ -23,7 +23,6 @@ export class NotesCardComponent implements OnInit {
     // child is set
       // If overflow of the text, if not - hide the truncator.
       let style = window.getComputedStyle(this.bodyText.nativeElement, null);
-      console.log(style);
       
       let viewAbleHeight= parseInt(style.getPropertyValue("height"), 10);
       
