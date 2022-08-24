@@ -16,7 +16,7 @@ import { NotesService } from 'src/app/shared/notes.service';
         style({
           height:0,
           opacity:0,
-          transform: 'scale(0.85)', 
+          transform: 'scale(0.85)',
           'margin-bottom' :0,
 
           // We have to expend out the padding properties.
@@ -41,17 +41,17 @@ import { NotesService } from 'src/app/shared/notes.service';
         // First scale up
         animate(50, style({
           transform: 'scale(1.05)'
-        })), 
+        })),
         // Then scale down  back to normal size while beginning to fade out.
         animate(50, style({
-          transform: 'scale(1)', 
+          transform: 'scale(1)',
           opacity: 0.75
         })),
         // Scale down and fade out comletely
         animate('120ms ease-out', style({
-          transform: 'scale(0.68)', 
+          transform: 'scale(0.68)',
           opacity:0
-        })), 
+        })),
         animate('150ms ease-out', style({
           height: 0,
           'margin-bottom': 0,
@@ -99,7 +99,7 @@ export class NotesListComponent implements OnInit {
 
   ngOnInit(): void {
     // We want to retrieve all notes from the notes service.
-    this.notes= this.notesService.getAll(); 
+    this.notes= this.notesService.getAll();
     // this.filteredNotes=this.notesService.getAll();
 
     this.filter('');
@@ -110,7 +110,7 @@ export class NotesListComponent implements OnInit {
     this.notesService.delete(noteId);
     this.filter(this.filterInputElRef.nativeElement.value);
   }
-  
+
   generateNoteURL(note: Note){
     let noteId= this.notesService.getId(note);
     return noteId;
@@ -118,8 +118,7 @@ export class NotesListComponent implements OnInit {
 
   filter(query: any){
     query= query.toLowerCase().trim();
-    console.log("entered");
-    
+
     let allResults: Note[] = new Array<Note>();
     // Split up the search query into individual words.
     let terms: string[]= query.split(' ');
@@ -128,13 +127,13 @@ export class NotesListComponent implements OnInit {
     // Compile all relevant results into the allResults array.
     terms.forEach(term=>{
       let results: Note[]= this.releventsNotes(term);
-      // Append results to the allResults array. 
+      // Append results to the allResults array.
       allResults= [...allResults, ...results] // ES6
     });
 
     // allResults will include duplicate notes
     // Because a prticular note can be the result of many search terms
-    // But we dont want to show the same note multiple times on the UI 
+    // But we dont want to show the same note multiple times on the UI
     // So we first must remove the duplicates.
 
     let uniqueResults= this.removeDuplicates(allResults);
@@ -165,10 +164,10 @@ export class NotesListComponent implements OnInit {
   }
 
   sortByRelevancy(searchResults: Note[]){
-    // This method will calculate the relevancy of a note based on the number of times it appears 
+    // This method will calculate the relevancy of a note based on the number of times it appears
     // In the search results.
 
-    // Format= key: value. 
+    // Format= key: value.
     let noteCountObj: any= {};
 
     searchResults.forEach(note=> {

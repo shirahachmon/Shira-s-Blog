@@ -6,6 +6,8 @@ import { NoteDetailsComponent } from './notes/note-details/note-details.componen
 import { NotesListComponent } from './notes/notes-list/notes-list.component';
 import { PracticeComponent } from './practice/practice.component';
 import { SummaryComponent } from './summary/summary.component';
+import { BoardComponent } from './tic-tac-toe/board/board.component';
+import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { TricksComponent } from './tricks/tricks.component';
 import { TripComponent } from './trip/trip.component';
 
@@ -33,7 +35,7 @@ const routes: Routes = [
 },
 {
     path: 'notes',
-    component: MainLayoutComponent, 
+    component: MainLayoutComponent,
     children:[
         {path: '',
         component: NotesListComponent
@@ -46,6 +48,10 @@ const routes: Routes = [
         component: NoteDetailsComponent
         }
     ]
+},
+{
+    path: 'tic-tac-toe',
+    component: TicTacToeComponent
 },
 {
     path: '',

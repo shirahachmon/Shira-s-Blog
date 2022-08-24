@@ -1,0 +1,8 @@
+<!-- W-full is width-full. It is determine the width of the section. Some shortCut; -->
+<section w-full >
+  <!-- row 1 -->
+    <div class="square-container  h-48" *ngFor="let square of boardService.board">
+      <app-square [square]="square" border-blue> </app-square>
+    </div>
+  </section>
+

@@ -1,0 +1,16 @@
+p {
+  font-family: Lato;
+}
+
+h1 {
+
+  transition: color .2s;
+
+}
+h1 :leave {
+  transition: display 4s;
+}
+
+.header {
+    margin-top: 10px;
+}

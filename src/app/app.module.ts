@@ -1,3 +1,4 @@
+import { GameService } from './shared/game.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatInputModule } from '@angular/material/input';
 import {MatCheckboxModule } from '@angular/material/checkbox';
+import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
+import { SquareComponent } from './tic-tac-toe/square/square.component';
+import { BoardComponent } from './tic-tac-toe/board/board.component';
+import { NotesService } from './shared/notes.service';
 
 
 
@@ -45,6 +50,9 @@ import {MatCheckboxModule } from '@angular/material/checkbox';
     MainLayoutComponent,
     NotesCardComponent,
     NoteDetailsComponent,
+    TicTacToeComponent,
+    SquareComponent,
+    BoardComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +71,7 @@ import {MatCheckboxModule } from '@angular/material/checkbox';
     MatInputModule,
     MatCheckboxModule
   ],
-  providers: [],
+  providers: [GameService, NotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
