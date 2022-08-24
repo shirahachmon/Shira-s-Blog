@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LightboxModule } from 'ngx-lightbox';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -21,6 +21,10 @@ import { PracticeComponent } from './practice/practice.component';
 import { TricksComponent } from './tricks/tricks.component';
 import { SummaryComponent } from './summary/summary.component';
 import { TripComponent } from './trip/trip.component';
+import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
+import { SquareComponent } from './tic-tac-toe/square/square.component';
+import { BoardComponent } from './tic-tac-toe/board/board.component';
+import { NotesService } from './shared/notes.service';
 
 
 // Material
@@ -29,10 +33,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatInputModule } from '@angular/material/input';
 import {MatCheckboxModule } from '@angular/material/checkbox';
-import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
-import { SquareComponent } from './tic-tac-toe/square/square.component';
-import { BoardComponent } from './tic-tac-toe/board/board.component';
-import { NotesService } from './shared/notes.service';
+import {MatDialogModule } from '@angular/material/dialog';
+import { DialogAreYouSureComponent } from './dialog-are-you-sure/dialog-are-you-sure.component';
+
 
 
 
@@ -53,12 +56,14 @@ import { NotesService } from './shared/notes.service';
     TicTacToeComponent,
     SquareComponent,
     BoardComponent,
+    DialogAreYouSureComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
 
     LightboxModule,
     FontAwesomeModule,
@@ -69,9 +74,11 @@ import { NotesService } from './shared/notes.service';
     MatButtonModule,
     MatSidenavModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule
   ],
   providers: [GameService, NotesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[DialogAreYouSureComponent]
 })
 export class AppModule { }

@@ -21,18 +21,18 @@ const routes: Routes = [
     path: 'trip',
     component: TripComponent
 },
-{
-    path: 'summary',
-    component: SummaryComponent
-},
-{
-    path: 'practice',
-    component: PracticeComponent
-},
-{
-    path: 'tricks',
-    component: TricksComponent
-},
+// {
+//     path: 'summary',
+//     component: SummaryComponent
+// },
+// {
+//     path: 'practice',
+//     component: PracticeComponent
+// },
+// {
+//     path: 'tricks',
+//     component: TricksComponent
+// },
 {
     path: 'notes',
     component: MainLayoutComponent,
