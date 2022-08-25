@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LightboxModule } from 'ngx-lightbox';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 // Importing all components
@@ -35,6 +36,7 @@ import {MatInputModule } from '@angular/material/input';
 import {MatCheckboxModule } from '@angular/material/checkbox';
 import {MatDialogModule } from '@angular/material/dialog';
 import { DialogAreYouSureComponent } from './dialog-are-you-sure/dialog-are-you-sure.component';
+import { KanbanLayoutComponent } from './kanban-layout/kanban-layout.component';
 
 
 
@@ -57,6 +59,7 @@ import { DialogAreYouSureComponent } from './dialog-are-you-sure/dialog-are-you-
     SquareComponent,
     BoardComponent,
     DialogAreYouSureComponent,
+    KanbanLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ import { DialogAreYouSureComponent } from './dialog-are-you-sure/dialog-are-you-
     LightboxModule,
     FontAwesomeModule,
     NgbModule,
+    DragDropModule,
 
     // Material imports
     MatCardModule,

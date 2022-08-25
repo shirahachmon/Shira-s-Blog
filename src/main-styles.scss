@@ -1,3 +1,5 @@
+// Global styles and changing bulma variables.
+
 @charset "utf-8";
 
 // Import a Google Font
@@ -14,6 +16,7 @@ $green: #0bf387;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
+
 $primary: $purple;
 $link: $blue;
 
@@ -30,4 +33,4 @@ html, body{
     height:100%;
     font-size:18px !important;
     // overflow: hidden !important;
-} 
+}

@@ -1,3 +1,4 @@
+import { KanbanLayoutComponent } from './kanban-layout/kanban-layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -52,6 +53,10 @@ const routes: Routes = [
 {
     path: 'tic-tac-toe',
     component: TicTacToeComponent
+},
+{
+    path: 'kanban-layout',
+    component: KanbanLayoutComponent
 },
 {
     path: '',
