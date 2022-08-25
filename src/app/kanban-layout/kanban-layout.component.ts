@@ -1,6 +1,8 @@
 import { Board } from './../shared/board.model';
 import { Component} from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {CdkDragDrop,
+       moveItemInArray,
+      transferArrayItem} from '@angular/cdk/drag-drop';
 import { Column } from '../shared/column.model';
 
 @Component({
@@ -11,6 +13,7 @@ import { Column } from '../shared/column.model';
 export class KanbanLayoutComponent {
 
 
+  // Using the board class(model).
 board: Board= new Board('Test Board', [
   new Column('Ideas', [
     "Mabye go play tennis",
@@ -33,7 +36,7 @@ board: Board= new Board('Test Board', [
 ])
 
 
-
+// Drop cdk on another category.
   drop(event: CdkDragDrop<string[]>) {
 
     if (event.previousContainer === event.container) {
@@ -48,29 +51,3 @@ board: Board= new Board('Test Board', [
     }
   }
 }
-
-
-
-
-// todo = ['Get to work',
-// 'Pick up groceries',
-// 'Go home',
-// 'Fall asleep'];
-
-// done = ['Get up',
-// 'Brush teeth',
-// 'Take a shower',
-// 'Check e-mail',
-// 'Walk dog'];
-
-// research = ['Get up',
-// 'Brush teeth',
-// 'Take a shower',
-// 'Check e-mail',
-// 'Walk dog'];
-
-// ideas = ['Get up',
-// 'Brush teeth',
-// 'Take a shower',
-// 'Check e-mail',
-// 'Walk dog'];
