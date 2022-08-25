@@ -1,3 +1,4 @@
+import { AddItemFormComponent } from './budget-calculator-section/add-item-form/add-item-form.component';
 import { GameService } from './shared/game.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -37,6 +38,9 @@ import {MatCheckboxModule } from '@angular/material/checkbox';
 import {MatDialogModule } from '@angular/material/dialog';
 import { DialogAreYouSureComponent } from './dialog-are-you-sure/dialog-are-you-sure.component';
 import { KanbanLayoutComponent } from './kanban-layout/kanban-layout.component';
+import { BudgetCalculatorComponent } from './budget-calculator-section/budget-calculator/budget-calculator.component';
+import { BudgetItemListComponent } from './budget-calculator-section/budget-item-list/budget-item-list.component';
+import { BudgetItemCardComponent } from './budget-calculator-section/budget-item-list/budget-item-card/budget-item-card.component';
 
 
 
@@ -60,6 +64,10 @@ import { KanbanLayoutComponent } from './kanban-layout/kanban-layout.component';
     BoardComponent,
     DialogAreYouSureComponent,
     KanbanLayoutComponent,
+    BudgetCalculatorComponent,
+    AddItemFormComponent,
+    BudgetItemListComponent,
+    BudgetItemCardComponent
   ],
   imports: [
     BrowserModule,

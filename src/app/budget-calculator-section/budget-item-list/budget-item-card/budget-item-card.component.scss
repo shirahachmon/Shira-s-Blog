@@ -1,0 +1,91 @@
+@import '../../../../main-styles.scss';
+
+.root{
+  height: 65px;
+  display: flex;
+  width: 100%;
+  position: relative;
+
+  &:hover{
+    .x-iconButton{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .x-iconButton{
+    position: absolute;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    background:gray;
+    top: -17px;
+    right: -17px;
+    cursor: pointer;
+    color: black;
+
+    opacity: 0;
+    transform: scale(0);
+
+    transition: opacity 0.2s ease-in, transform 0.2s ease-out;
+
+    &:hover{
+      transform: scale(1.2); //zoom in
+    }
+  }
+
+}
+
+.budget-item{
+  display: flex;
+  width: 100%;
+  background:lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  .description{
+    display: flex;
+    flex-grow: 1;
+    font-size: 18px;
+    margin-left: 5px;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .amount{
+    display: flex;
+    flex-grow: 1;
+    font-size: 18px;
+    margin-left: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+  }
+
+  &:hover{
+    background-color: darken(lightgray, 2%);
+  }
+}
+
+
+.expense{
+  p{
+    color:red;
+  }
+  .amount{
+    background-color: lightcoral;
+  }
+}
+
+.income{
+  p{
+    color:green;
+  }
+  .amount{
+    background-color: lightgreen;
+  }
+}

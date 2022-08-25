@@ -1,3 +1,4 @@
+import { BudgetCalculatorComponent } from './budget-calculator-section/budget-calculator/budget-calculator.component';
 import { KanbanLayoutComponent } from './kanban-layout/kanban-layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -57,6 +58,10 @@ const routes: Routes = [
 {
     path: 'kanban-layout',
     component: KanbanLayoutComponent
+},
+{
+    path: 'budget-calculator',
+    component: BudgetCalculatorComponent
 },
 {
     path: '',

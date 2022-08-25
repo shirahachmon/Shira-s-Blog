@@ -1,0 +1,64 @@
+.root{
+  background: url("/assets/images/budget-calculate.jpg");
+  background-size: cover;
+  overflow-y: auto !important;
+  width: 100vw !important;
+  height: 90vh !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-name{
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background:linear-gradient(75deg, rgb(130, 111, 148), rgb(231, 205, 173)) !important;
+  height: 100%;
+  margin-top: 14px;
+  text-align: center;
+  color: wheat;
+
+  // DO NOT DELETE.
+  // background: -webkit-linear-gradient(#13f7f4, #2af598);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+}
+
+.total-budget-section{
+  height: 130px !important;
+  display: flex;
+  height: 250px;
+  background: black;
+  opacity: 0.8;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h2{
+    font-weight: 300;
+    color: white;
+    font-size: 56px;
+
+    &.green{
+      // An option to light a color
+      color: lighten($color: green, $amount: 12%);
+    }
+
+    &.red{
+      color: red;
+    }
+  }
+}
+
+.add-item-section{
+  display:flex;
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .add-item-container{
+    width: 600px;
+
+  }
+}
