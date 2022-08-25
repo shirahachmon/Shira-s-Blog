@@ -41,6 +41,7 @@ import { KanbanLayoutComponent } from './kanban-layout/kanban-layout.component';
 import { BudgetCalculatorComponent } from './budget-calculator-section/budget-calculator/budget-calculator.component';
 import { BudgetItemListComponent } from './budget-calculator-section/budget-item-list/budget-item-list.component';
 import { BudgetItemCardComponent } from './budget-calculator-section/budget-item-list/budget-item-card/budget-item-card.component';
+import { EditItemModelComponent } from './budget-calculator-section/edit-item-model/edit-item-model.component';
 
 
 
@@ -67,7 +68,8 @@ import { BudgetItemCardComponent } from './budget-calculator-section/budget-item
     BudgetCalculatorComponent,
     AddItemFormComponent,
     BudgetItemListComponent,
-    BudgetItemCardComponent
+    BudgetItemCardComponent,
+    EditItemModelComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +93,6 @@ import { BudgetItemCardComponent } from './budget-calculator-section/budget-item
   ],
   providers: [GameService, NotesService],
   bootstrap: [AppComponent],
-  entryComponents:[DialogAreYouSureComponent]
+  entryComponents:[DialogAreYouSureComponent, EditItemModelComponent]
 })
 export class AppModule { }
