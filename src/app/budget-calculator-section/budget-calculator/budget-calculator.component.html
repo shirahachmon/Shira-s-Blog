@@ -1,28 +1,26 @@
 <div class="root">
 
-  <!-- <div class="navbar has-background-dark"> -->
-    <!-- <div class="navbar-brand"> -->
-      <div class="navbar-item">
-        <h1 class="app-name">Budget Calculator</h1>
-      </div>
-    <!-- </div> -->
-  <!-- </div> -->
+    <div class="navbar-item">
+      <h1 class="app-name">Budget Calculator</h1>
+    </div>
 
   <section class="total-budget-section">
     <h2> {{budgetSum}} </h2>
   </section>
 
-
   <section class="add-item-section">
     <div class="add-item-container">
-
-      <app-add-item-form style="padding: 20px;"  (formSubmit)="addItem($event)"></app-add-item-form>
-
+      <app-add-item-form
+      style="padding: 20px;"
+      (formSubmit)="addItem($event)"></app-add-item-form>
     </div>
   </section>
 
-  <br style="margin-top: 0;">
-  <app-budget-item-list [budgetItems]="budgetItems"
+  <!-- Not best practice.. But nvm for now. -->
+  <br style="margin-top:0;">
+
+  <app-budget-item-list
+  [budgetItems]="budgetItems"
   (delete)="deleteItem($event)"></app-budget-item-list>
 
 </div>
