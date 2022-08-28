@@ -1,3 +1,4 @@
+import { TaskViewComponent } from './task-manager/task-view/task-view.component';
 import { BudgetCalculatorComponent } from './budget-calculator-section/budget-calculator/budget-calculator.component';
 import { KanbanLayoutComponent } from './kanban-layout/kanban-layout.component';
 import { NgModule } from '@angular/core';
@@ -62,6 +63,10 @@ const routes: Routes = [
 {
     path: 'budget-calculator',
     component: BudgetCalculatorComponent
+},
+{
+    path: 'task-manager',
+    component: TaskViewComponent
 },
 {
     path: '',
