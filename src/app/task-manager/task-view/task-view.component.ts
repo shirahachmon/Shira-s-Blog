@@ -1,3 +1,4 @@
+import { TasksService } from './../../shared/tasks.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private taskService: TasksService) { }
 
   ngOnInit(): void {
+  }
+
+  createNewList(){
+    this.taskService.createList('testing').subscribe((res: any)=>{
+      console.log(res)
+    })
   }
 
 }

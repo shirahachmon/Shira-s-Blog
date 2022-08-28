@@ -8,7 +8,7 @@
     }
   },
   "projects": {
-    "crmRealEstate": {
+    "blog": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -22,7 +22,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/crm-real-estate",
+            "outputPath": "dist/blog",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "crmRealEstate:build:production"
+              "browserTarget": "blog:build:production"
             },
             "development": {
-              "browserTarget": "crmRealEstate:build:development"
+              "browserTarget": "blog:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "crmRealEstate:build"
+            "browserTarget": "blog:build"
           }
         },
         "test": {

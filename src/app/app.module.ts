@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AddItemFormComponent } from './budget-calculator-section/add-item-form/add-item-form.component';
 import { GameService } from './shared/game.service';
 import { NgModule } from '@angular/core';
@@ -79,7 +80,7 @@ import { TaskViewComponent } from './task-manager/task-view/task-view.component'
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-
+    HttpClientModule,
     LightboxModule,
     FontAwesomeModule,
     NgbModule,
