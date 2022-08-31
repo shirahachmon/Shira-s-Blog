@@ -1,3 +1,4 @@
+import { EditListComponent } from './task-manager/edit-list/edit-list.component';
 import { NewTaskComponent } from './task-manager/new-task/new-task.component';
 import { NewListComponent } from './task-manager/new-list/new-list.component';
 import { TaskViewComponent } from './task-manager/task-view/task-view.component';
@@ -15,6 +16,7 @@ import { BoardComponent } from './tic-tac-toe/board/board.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { TricksComponent } from './tricks/tricks.component';
 import { TripComponent } from './trip/trip.component';
+import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
 
 
 const routes: Routes = [
@@ -72,6 +74,8 @@ const routes: Routes = [
     pathMatch: 'full'
 },
 { path: 'new-list', component: NewListComponent},
+{ path: 'edit-list/:listId', component: EditListComponent},
+{ path: 'lists/:listId/edit-task/:taskId', component: EditTaskComponent},
 { path: 'lists', component: TaskViewComponent},
 { path: 'lists/:listId', component: TaskViewComponent},
 { path: 'lists/:listId/new-task', component: NewTaskComponent},

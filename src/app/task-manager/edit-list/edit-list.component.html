@@ -1,0 +1,19 @@
+<div class="centered-content">
+  <div class="model-box has-background-light">
+
+    <h1 class="title">Edit list</h1>
+
+    <input class="input has-background-light"
+     #newTitle type="text"
+      placeholder="edit the list's name" required>
+
+    <div class="buttons is-right">
+      <button class="button is-medium" routerLink="/task-manager">Cancel</button>
+
+      <button class="button has-text-white is-primary"
+       (click)="updateList(newTitle.value)">
+       Save</button>
+    </div>
+
+  </div>
+</div>

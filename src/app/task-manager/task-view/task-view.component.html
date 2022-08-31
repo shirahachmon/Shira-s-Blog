@@ -19,17 +19,62 @@
     </div>
 
     <div class="tasks-list-container has-background-light">
-      <h1 class="title has-text-primary">
-        Tasks
-     </h1>
-
+      <div class="top-bar">
+        <h1 class="title has-text-primary">
+          Tasks
+       </h1>
+       <div class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true">
+            <span>Hover me</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+          <div class="dropdown-content">
+            <div class="dropdown-item"
+             [routerLink]="['/edit-list', selectedListId]">
+              <a>Edit</a>
+            </div>
+            <div class="dropdown-item" (click)="onDeleteList()">
+              <a class="has-text-danger">Delete </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
      <div class="task"
       (click)="onTaskClick(task)"
       *ngFor="let task of tasks"
       [ngClass]="{'completed': task.completed}">
-      <p>{{task.title}}</p>
-      <p>{{task.completed}}</p>
-     </div>
+
+      <div class="task-text">
+        <p>{{task.title}}</p>
+      </div>
+
+      <div class="task-buttons">
+
+        <button class="button"
+        style="margin-right:10px; width: 30px; height: 30px;"
+        [routerLink]="['/lists', selectedListId, 'edit-task', task._id]">
+          <div class="icon">
+            <fa-icon [icon]="faEdit"></fa-icon>
+          </div>
+        </button>
+
+        <button class="button is-danger"
+         style=" width: 30px; height: 30px;"
+         (click)="onTaskDelete(task._id)">
+          <div class="icon">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </div>
+        </button>
+
+      </div>
+
+    </div>
 
      <button class="circle-add-button is-primary" routerLink="./new-task" > + </button>
     </div>

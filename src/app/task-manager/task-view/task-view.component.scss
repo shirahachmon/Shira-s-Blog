@@ -18,6 +18,22 @@
   height: 71vh;
   max-width: 1000px;
   max-height: 600px;
+
+
+  .title{
+    margin:0;
+  }
+
+  .top-bar{
+    display: flex;
+
+    .title{
+      flex-grow: 1;
+    }
+    .dropdown{
+      width: 100px;
+    }
+  }
 }
 
 .side-bar{
@@ -86,11 +102,13 @@
 }
 
   .task{
+    display: flex;
     background-color: rgb(10 10 10 / 10%);
     padding: 15px 14px !important;
     color: gray;
     border-radius: 4px;
     margin-top: 10px;
+    align-items: center;
 
      &:not(.completed){
       transition: box-shadow 0.2s ease, transform 0.2s ease ;
@@ -101,11 +119,26 @@
       }
       &:hover{
         box-shadow: 0 0 0 5px rgb(10 10 10 / 10%);
+        .task-buttons{
+          opacity: 1;
+          transform: scale(1);
+        }
       }
      }
-    &.completed{
+    &.completed .task-text{
       text-decoration: line-through;
       opacity: 80%;
+    }
+
+    .task-text{
+      flex-grow: 1;
+    }
+
+    .task-buttons{
+      width: 15%;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      transform: scale(0.8);
     }
   }
 
