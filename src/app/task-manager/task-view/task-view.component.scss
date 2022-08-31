@@ -1,3 +1,6 @@
+@import '../../../main-styles.scss';
+
+
 
 .centered-content{
   display: flex;
@@ -9,6 +12,7 @@
 
 .task-manager-container{
   margin-top: -175px;
+  position: relative;
   display: flex;
   width: 84vw;
   height: 71vh;
@@ -88,7 +92,7 @@
     border-radius: 4px;
     margin-top: 10px;
 
-     &:not(.complete){
+     &:not(.completed){
       transition: box-shadow 0.2s ease, transform 0.2s ease ;
       cursor: pointer;
 
@@ -99,12 +103,20 @@
         box-shadow: 0 0 0 5px rgb(10 10 10 / 10%);
       }
      }
-
-
-    &.complete{
-      opacity: 80%;
+    &.completed{
       text-decoration: line-through;
+      opacity: 80%;
     }
   }
 
 
+
+  .circle-add-button{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    border-radius: 50%;
+  }
