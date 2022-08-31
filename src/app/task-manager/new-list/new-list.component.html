@@ -1,0 +1,16 @@
+<div class="centered-content">
+  <div class="model-box has-background-light">
+
+    <h1 class="title">Create a new list</h1>
+
+    <input class="input has-background-light"
+     #listTitleInput type="text"
+      placeholder="Add name of list" required>
+
+    <div class="buttons is-right">
+      <button class="button is-medium" routerLink="/task-manager">Cancel</button>
+      <button class="button has-text-white is-primary" (click)="createList(listTitleInput.value)" >Create</button>
+    </div>
+
+  </div>
+</div>

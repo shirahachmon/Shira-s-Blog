@@ -44,6 +44,7 @@ import { BudgetItemListComponent } from './budget-calculator-section/budget-item
 import { BudgetItemCardComponent } from './budget-calculator-section/budget-item-list/budget-item-card/budget-item-card.component';
 import { EditItemModelComponent } from './budget-calculator-section/edit-item-model/edit-item-model.component';
 import { TaskViewComponent } from './task-manager/task-view/task-view.component';
+import { NewListComponent } from './task-manager/new-list/new-list.component';
 
 
 
@@ -72,7 +73,8 @@ import { TaskViewComponent } from './task-manager/task-view/task-view.component'
     BudgetItemListComponent,
     BudgetItemCardComponent,
     EditItemModelComponent,
-    TaskViewComponent
+    TaskViewComponent,
+    NewListComponent
   ],
   imports: [
     BrowserModule,

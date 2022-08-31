@@ -1,3 +1,4 @@
+import { NewListComponent } from './task-manager/new-list/new-list.component';
 import { TaskViewComponent } from './task-manager/task-view/task-view.component';
 import { BudgetCalculatorComponent } from './budget-calculator-section/budget-calculator/budget-calculator.component';
 import { KanbanLayoutComponent } from './kanban-layout/kanban-layout.component';
@@ -66,7 +67,21 @@ const routes: Routes = [
 },
 {
     path: 'task-manager',
-    component: TaskViewComponent
+    redirectTo: 'lists',
+    pathMatch: 'full'
+    // component: TaskViewComponent,
+},
+{
+    path: 'new-list',
+    component: NewListComponent,
+},
+{
+    path: 'lists/:listId',
+    component: TaskViewComponent,
+},
+{
+  path: 'lists',
+  component: TaskViewComponent,
 },
 {
     path: '',

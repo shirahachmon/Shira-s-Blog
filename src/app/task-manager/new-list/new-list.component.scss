@@ -1,0 +1,29 @@
+.centered-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100vw;
+  height: 100vh;
+}
+
+.model-box{
+  margin-top: -150px;
+  min-height: 200px;
+  width: 100%;
+  max-width: 580px;
+  background-color:lightgreen;
+  border-radius: 5px;
+  padding: 35px !important;
+}
+
+.buttons{
+  width:100%;
+  text-align: center;
+
+  .button{
+    height: 40px;
+    width: 30%;
+    margin-top: 5px;
+    display: inline-block;
+  }
+}

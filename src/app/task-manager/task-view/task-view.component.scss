@@ -22,10 +22,19 @@
   width: 250px;
   background: white;
   padding: 42px !important;
-
+  position: relative;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 
+  .button{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90px;
+    height: 30px;
+    margin-left: 40px;
+    margin-bottom: 5px;
+  }
 }
 
 .tasks-list-container{
@@ -97,3 +106,5 @@
       text-decoration: line-through;
     }
   }
+
+
