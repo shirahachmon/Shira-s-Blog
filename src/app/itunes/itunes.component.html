@@ -1,0 +1,36 @@
+<div class="centered-content">
+  <div class="model-box has-background-light">
+
+    <h1 class="title">Edit Task</h1>
+
+    <input type="search"
+            class="form-control"
+            placeholder="Enter search string..."
+            #search>
+
+    <div class="buttons is-right">
+
+      <button class="button has-text-white is-primary"
+      (click)="doSearch(search.value)">
+       Search</button>
+    </div>
+
+
+  </div>
+  <div class="text-center">
+    <p class="lead" *ngIf="loading">Loading...</p>
+  </div>
+<ul class="list-group">
+  <li *ngFor="let track of array" class="list-group-item">
+
+  <img style="width: 40px; height: 40px;" src="{{track.artworkUrl30}}">
+  <a target="_blank" href="{{track.trackViewUrl}}">
+      {{track.trackName}}
+      </a>
+  </li>
+</ul>
+
+
+</div>
+
+

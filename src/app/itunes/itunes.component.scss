@@ -1,16 +1,11 @@
 .centered-content{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:100vw;
-  height: 100vh;
+  display: inline;
 }
 
 .model-box{
-  margin-top: -150px;
   min-height: 200px;
-  width: 100%;
-  max-width: 580px;
+  max-width: 300px;
+  margin-left: 34%;
   background-color:lightgreen;
   border-radius: 5px;
   padding: 35px !important;

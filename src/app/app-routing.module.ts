@@ -11,12 +11,13 @@ import { MainLayoutComponent } from './notes/main-layout/main-layout.component';
 import { NoteDetailsComponent } from './notes/note-details/note-details.component';
 import { NotesListComponent } from './notes/notes-list/notes-list.component';
 import { PracticeComponent } from './practice/practice.component';
-import { SummaryComponent } from './summary/summary.component';
+// import { SummaryComponent } from './summary/summary.component';
 import { BoardComponent } from './tic-tac-toe/board/board.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { TricksComponent } from './tricks/tricks.component';
-import { TripComponent } from './trip/trip.component';
 import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
+import { InstegramComponent } from './instegram/instegram.component';
+import { ItunesComponent } from './itunes/itunes.component';
 
 
 const routes: Routes = [
@@ -25,8 +26,8 @@ const routes: Routes = [
     component: HomeComponent
 },
 {
-    path: 'trip',
-    component: TripComponent
+    path: 'instegram',
+    component: InstegramComponent
 },
 // {
 //     path: 'summary',
@@ -40,6 +41,10 @@ const routes: Routes = [
 //     path: 'tricks',
 //     component: TricksComponent
 // },
+{
+  path: 'itunes',
+  component: ItunesComponent
+},
 {
     path: 'notes',
     component: MainLayoutComponent,

@@ -1,3 +1,4 @@
+import { InstegramComponent } from './instegram/instegram.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AddItemFormComponent } from './budget-calculator-section/add-item-form/add-item-form.component';
 import { GameService } from './shared/game.service';
@@ -21,9 +22,7 @@ import { MainLayoutComponent } from './notes/main-layout/main-layout.component';
 import { NotesCardComponent } from './notes/notes-card/notes-card.component';
 import { NoteDetailsComponent } from './notes/note-details/note-details.component';
 import { PracticeComponent } from './practice/practice.component';
-import { TricksComponent } from './tricks/tricks.component';
-import { SummaryComponent } from './summary/summary.component';
-import { TripComponent } from './trip/trip.component';
+import { SearchService, TricksComponent } from './tricks/tricks.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { SquareComponent } from './tic-tac-toe/square/square.component';
 import { BoardComponent } from './tic-tac-toe/board/board.component';
@@ -48,6 +47,7 @@ import { NewListComponent } from './task-manager/new-list/new-list.component';
 import { NewTaskComponent } from './task-manager/new-task/new-task.component';
 import { EditListComponent } from './task-manager/edit-list/edit-list.component';
 import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
+import { ItunesComponent } from './itunes/itunes.component';
 
 
 
@@ -60,8 +60,6 @@ import { EditTaskComponent } from './task-manager/edit-task/edit-task.component'
     HomeComponent,
     PracticeComponent,
     TricksComponent,
-    SummaryComponent,
-    TripComponent,
     NotesListComponent,
     MainLayoutComponent,
     NotesCardComponent,
@@ -80,7 +78,9 @@ import { EditTaskComponent } from './task-manager/edit-task/edit-task.component'
     NewListComponent,
     NewTaskComponent,
     EditListComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    InstegramComponent,
+    ItunesComponent
   ],
   imports: [
     BrowserModule,
@@ -102,7 +102,7 @@ import { EditTaskComponent } from './task-manager/edit-task/edit-task.component'
     MatCheckboxModule,
     MatDialogModule
   ],
-  providers: [GameService, NotesService],
+  providers: [GameService, NotesService, SearchService],
   bootstrap: [AppComponent],
   entryComponents:[DialogAreYouSureComponent, EditItemModelComponent]
 })
