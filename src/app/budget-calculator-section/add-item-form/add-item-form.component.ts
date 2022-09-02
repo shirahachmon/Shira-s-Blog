@@ -9,7 +9,7 @@ import { BudgetItem } from 'src/app/shared/budget-item.model';
 })
 export class AddItemFormComponent {
 
-  @Input() item: BudgetItem= new BudgetItem('', 0);
+  @Input() item: BudgetItem= new BudgetItem('','', 0);
 
   //EventEmitter
   @Output() formSubmit: EventEmitter<BudgetItem>= new EventEmitter<BudgetItem>();
