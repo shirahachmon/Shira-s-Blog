@@ -12,6 +12,11 @@ export class TasksService {
   constructor(private webReqService: WebRequestsService) { }
 
 
+  //---------------------------------------------------------------------//
+  // LISTS crud operators.
+  //---------------------------------------------------------------------//
+
+  // Get all lists from db.
   getLists() :Observable<any>{
     return this.webReqService.get('lists');
   }
@@ -21,16 +26,28 @@ export class TasksService {
     return this.webReqService.post('lists', { title })
   }
 
+  // Update a list byh his id.
   updateList(id: string, title: string): Observable<any>{
     return this.webReqService.patch(`lists/${id}`, { title })
   }
 
-  updateTask(listId: string, taskId: string, title: string): Observable<any>{
-    return this.webReqService.patch(`lists/${listId}/tasks/${taskId}`, { title })
+  // Delete a list by his id.
+  deleteList(id: string){
+    return this.webReqService.delete(`lists/${id}`)
   }
 
+  //---------------------------------------------------------------------//
+  // TASKS crud operators.
+  //---------------------------------------------------------------------//
+
+  // Get all tasks from the db.
   getTasks(listId: string): Observable<any>{
     return this.webReqService.get(`lists/${listId}/tasks`);
+  }
+
+  // Update task by his id and his list id.
+  updateTask(listId: string, taskId: string, title: string): Observable<any>{
+    return this.webReqService.patch(`lists/${listId}/tasks/${taskId}`, { title })
   }
 
   // Send a web request to create the task.
@@ -38,20 +55,17 @@ export class TasksService {
     return this.webReqService.post(`lists/${listId}/tasks`, { title })
   }
 
-  deleteList(id: string){
-    return this.webReqService.delete(`lists/${id}`)
-  }
-
+  // Delete a task by his id.
   deleteTask(id: string, listId:string){
     return this.webReqService.delete(`lists/${listId}/tasks/${id}`)
   }
 
+  // Update a task if completed or uncompleted.
   complete(task: Task){
     return this.webReqService.patch(`lists/${task.listId}/tasks/${task._id}`, {
       completed: !task.completed
     })
   }
-
 
 
 }

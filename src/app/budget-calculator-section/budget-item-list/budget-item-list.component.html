@@ -7,13 +7,12 @@
       <div class="budget-items">
 
         <!-- Dynamiclly load the items. -->
-        <div *ngFor="let item of budgetItems">
+        <div *ngFor="let item of budgetItemsService.budgetsItems">
           <app-budget-item-card
           *ngIf="item.amount >= 0"
-          style="margin-bottom: 20px;"
-           (cardClick)="onCardclick(item)"
            [item]="item"
-           (xButtonClick)="onDeleteButtonClick(item)"></app-budget-item-card>
+           (xButtonClick)="onDeleteButtonClick(item)">
+          </app-budget-item-card>
         </div>
 
       </div>
@@ -25,13 +24,12 @@
       <div class="budget-items">
 
         <!-- Dynamiclly load the items. -->
-        <div *ngFor="let item of budgetItems">
+        <div *ngFor="let item of budgetItemsService.budgetsItems">
           <app-budget-item-card
           *ngIf="item.amount < 0"
-          style="margin-bottom: 20px;"
            [item]="item"
-           (cardClick)="onCardclick(item)"
-           (xButtonClick)="onDeleteButtonClick(item)"></app-budget-item-card>
+           (xButtonClick)="onDeleteButtonClick(item)">
+          </app-budget-item-card>
         </div>
 
       </div>

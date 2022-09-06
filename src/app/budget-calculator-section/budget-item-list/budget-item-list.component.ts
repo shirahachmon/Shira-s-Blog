@@ -1,4 +1,6 @@
-// import { EditItemModelComponent } from './../edit-item-model/edit-item-model.component';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { BudgetItemsService } from './../../shared/budget-item.service';
+import { OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BudgetItem } from 'src/app/shared/budget-item.model';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
@@ -8,31 +10,22 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './budget-item-list.component.html',
   styleUrls: ['./budget-item-list.component.scss']
 })
-export class BudgetItemListComponent {
+export class BudgetItemListComponent implements OnInit{
 
-  constructor(public dialog: MatDialog ) { }
+  constructor(public dialog: MatDialog,
+              public budgetItemsService: BudgetItemsService) { }
 
-  @Input() budgetItems: BudgetItem[];
   @Output() delete: EventEmitter<BudgetItem> =new EventEmitter<BudgetItem>();
 
   onDeleteButtonClick(item: BudgetItem){
-    this.delete.emit(item)
+      this.delete.emit(item)
   }
 
-  onCardclick(item: BudgetItem){
-    // Show the edit model
-    // const dialogRef= this.dialog.open(EditItemModelComponent, {
-    //   width:'580px',
-    //   data:item
-    //   });
-
-    //   dialogRef.afterClosed().subscribe(result=> {
-    //       // Check if results have a value
-    //       if(result){
-    //         // Replace the item with the updated item to the form.
-    //         this.budgetItems[this.budgetItems.indexOf(item)]= result;
-    //     }
-    //   })
+  ngOnInit(): void {
+  // budgetItems has to be loading from the server to here.
+    this.budgetItemsService.getBudgetItems().subscribe((items: BudgetItem[] ) =>{
+      this.budgetItemsService.budgetsItems= items;
+      this.budgetItemsService.budgetSum= this.budgetItemsService.getItemsSum();
+    })
   }
-
 }

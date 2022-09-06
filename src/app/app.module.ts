@@ -41,7 +41,6 @@ import { KanbanLayoutComponent } from './kanban-layout/kanban-layout.component';
 import { BudgetCalculatorComponent } from './budget-calculator-section/budget-calculator/budget-calculator.component';
 import { BudgetItemListComponent } from './budget-calculator-section/budget-item-list/budget-item-list.component';
 import { BudgetItemCardComponent } from './budget-calculator-section/budget-item-list/budget-item-card/budget-item-card.component';
-import { EditItemModelComponent } from './budget-calculator-section/edit-item-model/edit-item-model.component';
 import { TaskViewComponent } from './task-manager/task-view/task-view.component';
 import { NewListComponent } from './task-manager/new-list/new-list.component';
 import { NewTaskComponent } from './task-manager/new-task/new-task.component';
@@ -73,7 +72,6 @@ import { ItunesComponent } from './itunes/itunes.component';
     AddItemFormComponent,
     BudgetItemListComponent,
     BudgetItemCardComponent,
-    EditItemModelComponent,
     TaskViewComponent,
     NewListComponent,
     NewTaskComponent,
@@ -104,6 +102,6 @@ import { ItunesComponent } from './itunes/itunes.component';
   ],
   providers: [GameService, NotesService, SearchService],
   bootstrap: [AppComponent],
-  entryComponents:[DialogAreYouSureComponent, EditItemModelComponent]
+  entryComponents:[DialogAreYouSureComponent]
 })
 export class AppModule { }

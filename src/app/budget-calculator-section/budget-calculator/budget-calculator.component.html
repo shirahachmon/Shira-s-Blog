@@ -5,7 +5,7 @@
     </div>
 
   <section class="total-budget-section">
-    <h2> {{budgetSum}} </h2>
+    <h2> {{budgetItemService.budgetSum}} </h2>
   </section>
 
   <section class="add-item-section">
@@ -20,7 +20,6 @@
   <br style="margin-top:0;">
 
   <app-budget-item-list
-  [budgetItems]="budgetItems"
   (delete)="deleteItem($event)"></app-budget-item-list>
 
 </div>

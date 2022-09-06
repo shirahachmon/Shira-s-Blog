@@ -1,35 +1,36 @@
 import { BudgetItem } from 'src/app/shared/budget-item.model';
 import { Component} from '@angular/core';
+import { BudgetItemsService } from 'src/app/shared/budget-item.service';
 
 @Component({
   selector: 'app-budget-calculator',
   templateUrl: './budget-calculator.component.html',
   styleUrls: ['./budget-calculator.component.scss']
 })
-export class BudgetCalculatorComponent {
+export class BudgetCalculatorComponent{
 
-  budgetItems: BudgetItem[]= new Array<BudgetItem>();
-  budgetSum: number= 0;
-
-  // Get sum of all the budget items. Using reduce js functions.
-  getSum(){
-    return this.budgetItems.reduce((sum, item) =>{
-      return sum+=item.amount
-    },0)
-  }
+  constructor(public budgetItemService: BudgetItemsService){}
 
   // Adding item to the budget list/budget array actually.
   addItem(newItem: BudgetItem){
-    this.budgetItems.push(newItem);
-    this.budgetSum= this.getSum()
+    this.budgetItemService.createBudgetItem(newItem.amount, newItem.description).subscribe((newItem: BudgetItem)=>{
+      this.budgetItemService.budgetsItems.push(newItem);
+      this.budgetItemService.budgetSum= this.budgetItemService.getItemsSum();
+    })
   }
 
   // Delete item from the budget array.
   deleteItem(item: BudgetItem){
-    let index= this.budgetItems.indexOf(item);
-    // Splicing the array from the index of the item, until 1 index after-
-    // In this case, delete only the item.
-    this.budgetItems.splice(index, 1);
-    this.budgetSum= this.getSum();
+
+    // Getiing the id of the chosen to be removed.
+    let index= this.budgetItemService.budgetsItems.indexOf(item);
+
+    // DELETE http request to the server.
+    this.budgetItemService.deleteBudgetItem(item._id).subscribe((res)=>{
+    // Splice it from he array- immidiate react in the UI.
+    this.budgetItemService.budgetsItems.splice(index, 1);
+    // Immidiate react in the UI as well- update sum.
+    this.budgetItemService.budgetSum= this.budgetItemService.getItemsSum();
+    });
   }
 }

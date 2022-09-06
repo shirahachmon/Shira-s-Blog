@@ -1,5 +1,3 @@
-Hi everyone, and especially hi future me:)
-Some explanation about this code.. 
 
 ----------------------------------------------------------
 Font awsome:
