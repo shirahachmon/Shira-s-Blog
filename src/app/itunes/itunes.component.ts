@@ -44,8 +44,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 })
 export class ItunesComponent {
 
-      constructor(private itunes: SearchService){}
-    // hasError= true;
+    constructor(private itunes: SearchService){}
 
     loading: boolean= false;
 
