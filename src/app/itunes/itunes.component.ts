@@ -19,22 +19,22 @@ import { Component, OnInit, Injectable } from '@angular/core';
     // async call using the http client to achive the api.
     // promises and observables.
     // here we will choose to use a promises.
-
-    let promise= new Promise((resolve, reject)=>{
-      let apiURL= `${this.apiRoot}?term=${term}$media=music&limit=20`;
-      this.http.get(apiURL)
-      .toPromise()
-      .then((res) => {
-          // console.log(res);
-          this.results= res;
-          resolve(1000);
-        },
-        msg=> {
-          reject();
-        }
-      )})
-    return promise;
-  }
+      let promise = new Promise((resolve, reject) => {
+        let apiURL = `${this.apiRoot}?term=${term}&media=music&limit=20`;
+        this.http.get(apiURL)
+          .toPromise()
+          .then(
+            (res) => { // Success
+            this.results = res;
+            resolve(res);
+            },
+            (msg) => { // Error
+            reject(msg);
+            }
+          );
+      });
+      return promise;
+    }
 }
 
 @Component({
@@ -52,10 +52,29 @@ export class ItunesComponent {
       doSearch(term: any){
         this.loading=true;
         this.itunes.search(term).then(()=>{
+          this.array=this.itunes.results.results;
           this.loading=false;
         })
-        this.array=this.itunes.results.results;
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         // First- settimeout, the loop call back from hell example.
