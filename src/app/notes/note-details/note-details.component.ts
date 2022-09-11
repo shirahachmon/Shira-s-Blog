@@ -12,8 +12,7 @@ import { NotesService } from 'src/app/shared/notes.service';
 export class NoteDetailsComponent implements OnInit {
 
 
-  note: Note;
-  noteId: number;
+  currentNote: Note;
   new: boolean;
 
   constructor(private noteService: NotesService,
@@ -23,32 +22,31 @@ export class NoteDetailsComponent implements OnInit {
   ngOnInit(): void {
     // We want to find out if we are creating new note or updating existing one.
     this.route.params.subscribe((params: Params) => {
-      this.note= new Note();
-      if(params['id'] && params['id']>=0){
-        this.note= this.noteService.get(params['id'])
-        this.noteId=params['id'];
+      this.currentNote= new Note();
+      if(params['id'] && params['id']!="new" ){
+        this.noteService.getNote(params['id']).subscribe((note: Note)=>{
+          this.currentNote=note;
+        })
         this.new=false;
       }else{
         this.new=true;
-      }
-    })
-    
+      }})
   }
 
   onSubmit(form: NgForm){
     if(this.new){
-      // we should save the note
-      this.noteService.add(form.value);
-      this.router.navigateByUrl('/notes');  
+      this.noteService.createNote(form.value.title ,form.value.body).subscribe((newNote: Note)=>{
+          this.noteService.notes.push(newNote);
+          this.router.navigateByUrl('/notes');
+        });
     }else{
-      // Update note
-      this.noteService.update(this.noteId, form.value.title, form.value.body)
-      this.router.navigateByUrl('/notes');  
-    }
-    }
+      this.noteService.updateNote(this.currentNote._id, form.value.title ,form.value.body ).subscribe((newNote: Note)=>{
+        // this.noteService.notes.push(newNote);
+        this.router.navigateByUrl('/notes');
+      });
+    }}
 
   cancel(){
     this.router.navigateByUrl('/notes');
   }
-
 }

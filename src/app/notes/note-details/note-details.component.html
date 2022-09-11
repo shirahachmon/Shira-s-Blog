@@ -5,7 +5,7 @@
         <div class="field">
             <label class="label">Title</label>
             <div class="control">
-                <input type="text" name="title" [ngModel]="note.title"  required class="input">
+                <input type="text" name="title" [ngModel]="currentNote.title"  required class="input">
             </div>
         </div>
         <!--  Not likely to put a br tag-->
@@ -13,7 +13,7 @@
         <div class="field">
             <label class="label">Body</label>
             <div class="control">
-                <textarea class="text-area" name="body" [ngModel]="note.body"></textarea>
+                <textarea class="text-area" name="body" [ngModel]="currentNote.body"></textarea>
             </div>
         </div>
 

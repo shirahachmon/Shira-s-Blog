@@ -1,43 +1,46 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Note } from './note.model';
+import { WebRequestsService } from './web-requests.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotesService {
 
-
+  constructor(private webReqService: WebRequestsService) { }
   notes: Note[]= new Array<Note>();
 
-  constructor() { }
 
-  getAll(){
-    return this.notes;
-  }
-  
-  get(id: number){
-    return this.notes[id];
-  }
+  //---------------------------------------------------------------------//
+  // NOTES crud operators.
+  //---------------------------------------------------------------------//
 
-  getId(note: Note){
-    return this.notes.indexOf(note);
+  // Get all notes from db.
+  getNotes() :Observable<any>{
+    return this.webReqService.get('notes');
   }
 
-  add(note: Note){
-    // This method will add a note to the notes array and will return the id 
-    // Of the note.
-    let newLength= this.notes.push(note);
-    return newLength-1;
+  getNote(id: string): Observable<any>{
+    return this.webReqService.get(`notes/${id}`);
   }
 
-  update(id: number, title: string, body: string){
-    let note= this.notes[id];
-    note.title= title;
-    note.body=body;
+  // Send a web request to create the note.
+  createNote(title: string, body: string): Observable<any>{
+    return this.webReqService.post('notes', { title, body })
   }
 
-  delete(id: number){
-    // start deleting from the given id, and deleting only 1. 
-    this.notes.splice(id, 1);
+  // Update a note by his id.
+  updateNote(id: string, title: string, body: string): Observable<any>{
+    return this.webReqService.patch(`notes/${id}`, { title, body })
   }
+
+  // Delete a note by his id.
+  deleteNote(id: string){
+    return this.webReqService.delete(`notes/${id}`)
+  }
+
+  // getId(note: Note){
+  //   return this.notes.indexOf(note);
+  // }
 }

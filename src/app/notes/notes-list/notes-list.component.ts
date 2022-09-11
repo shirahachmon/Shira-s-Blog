@@ -37,30 +37,31 @@ import { NotesService } from 'src/app/shared/notes.service';
         })),
         animate(200)
       ]),
-      transition('* => void', [
-        // First scale up
-        animate(50, style({
-          transform: 'scale(1.05)'
-        })),
-        // Then scale down  back to normal size while beginning to fade out.
-        animate(50, style({
-          transform: 'scale(1)',
-          opacity: 0.75
-        })),
-        // Scale down and fade out comletely
-        animate('120ms ease-out', style({
-          transform: 'scale(0.68)',
-          opacity:0
-        })),
-        animate('150ms ease-out', style({
-          height: 0,
-          'margin-bottom': 0,
-          paddingTop :0,
-          paddingBottom :0,
-          paddingRight :0,
-          paddingLeft :0,
-        }))
-      ])
+
+      // transition('* => void', [
+      //   // First scale up
+      //   animate(50, style({
+      //     transform: 'scale(1.05)'
+      //   })),
+      //   // Then scale down  back to normal size while beginning to fade out.
+      //   animate(50, style({
+      //     transform: 'scale(1)',
+      //     opacity: 0.75
+      //   })),
+      //   // Scale down and fade out comletely
+      //   animate('120ms ease-out', style({
+      //     transform: 'scale(0.68)',
+      //     opacity:0
+      //   })),
+      //   animate('150ms ease-out', style({
+      //     height: 0,
+      //     'margin-bottom': 0,
+      //     paddingTop :0,
+      //     paddingBottom :0,
+      //     paddingRight :0,
+      //     paddingLeft :0,
+      //   }))
+      // ])
 
     ]),
 
@@ -87,34 +88,33 @@ export class NotesListComponent implements OnInit {
   faUserLock=faUserLock;
   faSearch=faSearch;
 
-  // Data when calling other component from here
-  // cardTitle:string= 'some title....'
-  // cardBody: string= 'body some bodybody some bodybody some body....'
-
-  notes: Note[]= new Array<Note>();
   filteredNotes: Note[]= new Array<Note>();
 
   @ViewChild('filterInput') filterInputElRef: ElementRef<HTMLInputElement>;
-  constructor(private notesService: NotesService ) { }
+  constructor(public notesService: NotesService ) { }
 
   ngOnInit(): void {
     // We want to retrieve all notes from the notes service.
-    this.notes= this.notesService.getAll();
-    // this.filteredNotes=this.notesService.getAll();
+    this.notesService.getNotes().subscribe((notes: any[])=>{
+      this.notesService.notes=notes;
+      this.filteredNotes=notes;
+    });
 
     this.filter('');
   }
 
   deleteNote(note: Note){
-    let noteId= this.notesService.getId(note);
-    this.notesService.delete(noteId);
-    this.filter(this.filterInputElRef.nativeElement.value);
+    let index= this.notesService.notes.indexOf(note);
+    this.notesService.deleteNote(note._id).subscribe((res)=>{
+      this.notesService.notes.splice(index, 1);
+      this.filter(this.filterInputElRef.nativeElement.value);
+    })
   }
 
-  generateNoteURL(note: Note){
-    let noteId= this.notesService.getId(note);
-    return noteId;
-  }
+  // generateNoteURL(note: Note){
+  //   let noteId= this.notesService.getId(note);
+  //   return noteId;
+  // }
 
   filter(query: any){
     query= query.toLowerCase().trim();
@@ -152,7 +152,7 @@ export class NotesListComponent implements OnInit {
 
   releventsNotes(query: any): Array<Note>{
     query= query.toLowerCase().trim();
-    let releventNotes= this.notes.filter(note=>{
+    let releventNotes= this.notesService.notes.filter(note=>{
       if(note.title && note.title.toLowerCase().includes(query))
         return true;
       if(note.body && note.body.toLowerCase().includes(query))
@@ -171,21 +171,21 @@ export class NotesListComponent implements OnInit {
     let noteCountObj: any= {};
 
     searchResults.forEach(note=> {
-      let noteId= this.notesService.getId(note);
+      // let noteId= this.notesService.getId(note);
 
-      if(noteCountObj[noteId]){
-        noteCountObj[noteId]+=1;
+      if(noteCountObj[note._id]){
+        noteCountObj[note._id]+=1;
       }else{
-        noteCountObj[noteId]=1;
+        noteCountObj[note._id]=1;
       }
     })
 
     this.filteredNotes= this.filteredNotes.sort( (a: Note, b: Note) => {
-      let aId= this.notesService.getId(a);
-      let bId= this.notesService.getId(b);
+      // let aId= this.notesService.getId(a);
+      // let bId= this.notesService.getId(b);
 
-      let aCount= noteCountObj[aId];
-      let bCount= noteCountObj[bId];
+      let aCount= noteCountObj[a._id];
+      let bCount= noteCountObj[b._id];
 
       return bCount-aCount;
   })

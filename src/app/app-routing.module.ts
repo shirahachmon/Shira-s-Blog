@@ -26,7 +26,7 @@ const routes: Routes = [
     component: HomeComponent
 },
 {
-    path: 'instegram',
+    path: 'instagram',
     component: InstegramComponent
 },
 // {

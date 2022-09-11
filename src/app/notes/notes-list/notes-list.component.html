@@ -9,16 +9,15 @@
 
 
     <div class="notes-list" [@listAnim]>
-        <!-- <app-notes-card [title]="cardTitle" [body]="cardBody"></app-notes-card> -->
         <app-notes-card
          *ngFor="let note of filteredNotes; index as i"
-          link="{{generateNoteURL(note)}}"
+          link="{{note._id}}"
           [@itemAnim]
           (delete)="deleteNote(note)"
           [title]="note.title"
           [body]="note.body" ></app-notes-card>
     </div>
-    
+
     <button class="button floating-add-button is-primary" routerLink="new"> +Add</button>
 </div>
 
