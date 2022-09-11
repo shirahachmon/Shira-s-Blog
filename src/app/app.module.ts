@@ -47,8 +47,12 @@ import { NewTaskComponent } from './task-manager/new-task/new-task.component';
 import { EditListComponent } from './task-manager/edit-list/edit-list.component';
 import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
 import { ItunesComponent } from './itunes/itunes.component';
+import { NgrxReduxTutorialComponent } from './ngrx-redux-tutorial/ngrx-redux-tutorial.component';
+import { StoreModule } from '@ngrx/store';
 
 
+import { simpleReducer } from './ngrx-redux-tutorial/simple.reducer';
+import { postReducer } from './ngrx-redux-tutorial/post.reducer';
 
 
 
@@ -78,7 +82,8 @@ import { ItunesComponent } from './itunes/itunes.component';
     EditListComponent,
     EditTaskComponent,
     InstegramComponent,
-    ItunesComponent
+    ItunesComponent,
+    NgrxReduxTutorialComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +96,10 @@ import { ItunesComponent } from './itunes/itunes.component';
     FontAwesomeModule,
     NgbModule,
     DragDropModule,
+    // StoreModule.forRoot({
+    //   post: postReducer,
+    //   message: simpleReducer
+    // }),
 
     // Material imports
     MatCardModule,

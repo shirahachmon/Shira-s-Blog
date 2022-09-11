@@ -18,6 +18,7 @@ import { TricksComponent } from './tricks/tricks.component';
 import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
 import { InstegramComponent } from './instegram/instegram.component';
 import { ItunesComponent } from './itunes/itunes.component';
+import { NgrxReduxTutorialComponent } from './ngrx-redux-tutorial/ngrx-redux-tutorial.component';
 
 
 const routes: Routes = [
@@ -84,6 +85,7 @@ const routes: Routes = [
 { path: 'lists', component: TaskViewComponent},
 { path: 'lists/:listId', component: TaskViewComponent},
 { path: 'lists/:listId/new-task', component: NewTaskComponent},
+// { path: 'ngrx-example', component: NgrxReduxTutorialComponent},
 {
     path: '',
     redirectTo: '/home',
