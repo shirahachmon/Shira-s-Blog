@@ -12,7 +12,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
-
 // Importing all components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -83,7 +82,7 @@ import { postReducer } from './ngrx-redux-tutorial/post.reducer';
     EditTaskComponent,
     InstegramComponent,
     ItunesComponent,
-    NgrxReduxTutorialComponent
+    NgrxReduxTutorialComponent,
   ],
   imports: [
     BrowserModule,

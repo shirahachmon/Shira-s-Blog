@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // According the server http port.
+  // ws_url: 'http://localhost:5000'
 };
 
 /*
